@@ -1,0 +1,13 @@
+<div class="main__container">
+  <div class="main-searchbox__container">
+    <div class="main-searchbox__logo">WikiSearch</div>
+    <form ng-submit="mainVm.search(mainVm.query)">
+      <div class="input-group">
+        <input type="text" ng-model="mainVm.query" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary main-searchbox__btn" type="submit">Search</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

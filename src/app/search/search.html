@@ -1,0 +1,18 @@
+<div class="search__container">
+  <div class="search__navigation">
+    <a ui-sref="home" class="search-navigation__back">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      <span>Go back</span>
+    </a>
+  </div>
+  <div class="results__container">
+    <div class="results__header">
+      <div class="results__header-title">Results</div>
+      <div class="results__header-time">in {{ searchVm.time }} seconds</div>
+    </div>
+
+    <div class="results__item" ng-repeat="item in searchVm.results">
+      <a ng-href="{{ item.url }}" class="results__item-link">{{ item.title }}</a>
+    </div>
+  </div>
+</div>
