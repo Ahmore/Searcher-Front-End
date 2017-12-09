@@ -6,18 +6,19 @@
     .controller('SearchController', SearchController);
 
   /** @ngInject */
-  function SearchController($state, $stateParams, $http, SearchService) {
+  function SearchController($state, $stateParams, SearchService) {
     var vm = this;
 
     vm.results = [];
     vm.time = 0;
+    vm.query = "";
 
     vm.init = function() {
-      var query = $stateParams.query;
+      vm.query = $stateParams.query;
 
-      if (query !== "") {
+      if (vm.query !== "") {
         SearchService.get({
-          query: query,
+          query: vm.query,
           n: 10
         }).$promise.then(function(results) {
           vm.results = results.results;
